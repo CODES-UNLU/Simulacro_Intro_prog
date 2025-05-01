@@ -46,7 +46,68 @@ print("Paso los test de la funcion Comparar_edades")
 # -  Tijera gana a Papel. 
 # -  Papel gana a Piedra. 
 
-#1 - identificar problema ( simular una partida entre dos jugadores de piedra, papel o tijera)
+# 1 identificar problema (simular una partida entre dos jugadores de piedra, papel o tijera). 
+# 2 Identificar los datos (piedra, papel o tijera). 
+# 3 Identificar los parametros (jugador 1 y jugador 2). 
+# 4 procesamiento datos (condicionales). 
+# 5 identificar las posibles soluciones (gana jugador 1, gana jugador 2 y empate). 
+# 6 retornar valores
+
+#Soluciones: Gana Jugador 1, Gana Jugador 2 o Empate.
+
+def partida(jugador_1,jugador_2):
+    
+    resultado = ""
+    
+    # Gana jugador 1
+    # -  Piedra gana a Tijera. 
+    # -  Tijera gana a Papel. 
+    # -  Papel gana a Piedra. 
+    if (((jugador_1 == "piedra") and (jugador_2 == "tijera")) 
+        or ((jugador_1 == "tijera") and (jugador_2 == "papel")) 
+        or ((jugador_1 == "papel") and (jugador_2 == "piedra"))):
+        resultado = "Gana Jugador 1"
+    elif(jugador_1 == jugador_2):
+        resultado = "Empate"
+    else:
+        resultado = "Gana Jugador 2"
+    return resultado
+
+#Simplificacion de lectura
+def partida2(jugador_1,jugador_2):
+    
+    resultado = ""
+    gana_j1_piedra = (jugador_1 == "piedra") and (jugador_2 == "tijera")
+    gana_j1_papel = (jugador_1 == "papel") and (jugador_2 == "piedra")
+    gana_j1_tijera = (jugador_1 == "tijera") and (jugador_2 == "papel")
+    
+    # Gana jugador 1
+    # -  Piedra gana a Tijera. 
+    # -  Tijera gana a Papel. 
+    # -  Papel gana a Piedra. 
+    if (gana_j1_piedra or gana_j1_papel or gana_j1_tijera):
+        resultado = "Gana Jugador 1"
+    elif(jugador_1 == jugador_2):
+        resultado = "Empate"
+    else:
+        resultado = "Gana Jugador 2"
+    return resultado
+
+
+#Test de la funcion
+assert(partida("piedra", "tijera") == "Gana Jugador 1") #Es True
+assert(partida("tijera","piedra") == "Gana Jugador 2") #Es True
+assert(partida("papel","papel") == "Empate" ) #Es True
+
+print("Paso los test de la funcion partida")
+#Test de la funcion
+assert(partida2("piedra", "tijera") == "Gana Jugador 1") #Es True
+assert(partida2("tijera","piedra") == "Gana Jugador 2") #Es True
+assert(partida2("papel","papel") == "Empate" ) #Es True
+
+print("Paso los test de la funcion partida2")
+
+        
 
 
 
