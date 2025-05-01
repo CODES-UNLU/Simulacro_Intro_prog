@@ -1,1 +1,0 @@
-# Simulacro_Intro_prog
