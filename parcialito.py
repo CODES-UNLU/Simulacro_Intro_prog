@@ -8,22 +8,6 @@
 # B1) Programar la función suma_primeros_impares que recibe un número natural n 
 # como parámetro, y retorna la suma los primeros n números impares. 
 
-# def suma_primeros_impares(numero):
-#     suma = 0
-#     mensaje = ""
-    
-#     if(numero %2 == 0):
-#         mensaje = "No hay impares"
-#     else:
-
-for i in range(6):
-    print("Posicion",i)
-    
-while 
-            
-    
-    
-
  
 # B2) Programar la función test_suma_primeros_impares que testea la función 
 # suma_primeros_impares, con al menos 2 casos de test. Justifique por qué 
