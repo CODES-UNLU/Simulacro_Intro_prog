@@ -33,9 +33,10 @@ def edadPersona(edad):
     else:
         cartel = "El dato ingresado no es numerico"
     return cartel
-print(edadPersona("2"))    
+#print(edadPersona("2"))    
 
-            
+
+               
 #######################################################################################################
 # Ejercicio 2 – Evaluación de inscripción a curso
 # Escribí una función que reciba nombre, edad y nivel de una persona, y evalúe si puede inscribirse a un curso.
@@ -58,6 +59,38 @@ print(edadPersona("2"))
 # "[nombre] no puede inscribirse al nivel [nivel]"
 # En caso contrario:
 # "[nombre] puede inscribirse al nivel [nivel]"
+
+def evaluar(nombre,edad,nivel):
+    cartel =""
+    if edad < 10:
+        cartel = f"{nombre} no puede incribirse al nivel {nivel}"
+    else:
+        if nivel == "Basico":
+            cartel = f"{nombre} puede incribirse al nivel {nivel}"
+        elif nivel == "Intermedio" and edad >= 15:
+            cartel = f"{nombre} puede incribirse al nivel {nivel}"
+        elif nivel == "Avanzado" and edad >= 18:
+            cartel = f"{nombre} puede incribirse al nivel {nivel}"
+        else:
+            cartel = f"{nombre} no puede incribirse al nivel {nivel}"
+    return cartel
+
+# print(evaluar("Juan",15,"Avanzado"))
+
+def evaluar2(nombre,edad,nivel):
+    cartel = ""
+    basico = nivel == "Basico" and edad >= 10
+    intermedio = nivel == "Intermedio" and edad >= 15
+    avanzado = nivel == "Avanzado" and edad >=18
+    
+    if basico or intermedio or avanzado:
+        cartel = f"{nombre} puede incribirse al nivel {nivel}"
+    else:
+        cartel = f"{nombre} no puede incribirse al nivel {nivel}"
+    return cartel
+
+print(evaluar2("Pedro",25,"Avanzado"))
+        
 
 #######################################################################################################
 # Ejercicio 3 – Cálculo de precio final con descuentos
